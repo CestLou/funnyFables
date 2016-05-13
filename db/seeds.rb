@@ -5,3 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+
+fable1 = {
+	title: "The smelly Ogre",
+	lines_attributes: {
+		"0": {
+			text: "Once upon a time there was a",
+			key_word: "smelly"
+		},
+		"1": {
+			text: "ogre.  He had a pet",
+			key_word: "fish"
+		},
+		"2": {
+			text: ". The end."
+		}
+	}
+}
+
+#User.create!(username: "Admin", email: "foo@bar.com", password: "111111", password_confirmation: "111111")
+Fable.create!(fable1)

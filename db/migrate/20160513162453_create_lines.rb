@@ -1,8 +1,9 @@
 class CreateLines < ActiveRecord::Migration
   def change
     create_table :lines do |t|
-    	t.string :text
-    	t.string :key_word
+    	t.string :text, default: ""
+    	t.string :key_word, default: ""
+    	t.integer :fable_id
     end
   end
 end

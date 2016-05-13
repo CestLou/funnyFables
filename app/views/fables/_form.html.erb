@@ -1,0 +1,17 @@
+<%= form_for(@fable) do |f| %>
+  <% if @fable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@fable.errors.count, "error") %> prohibited this fable from being saved:</h2>
+
+      <ul>
+      <% @fable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

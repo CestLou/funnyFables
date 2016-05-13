@@ -23,16 +23,19 @@ ActiveRecord::Schema.define(version: 20160513163103) do
 
   create_table "fables", force: :cascade do |t|
     t.string   "title"
+    t.integer  "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "lines", force: :cascade do |t|
-    t.string "text"
-    t.string "key_word"
+    t.string  "text",     default: ""
+    t.string  "key_word", default: ""
+    t.integer "fable_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "username"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false

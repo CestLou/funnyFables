@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :fables
   devise_for :users
   root to: 'static_pages#home'
 
