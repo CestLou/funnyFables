@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160513163103) do
   create_table "lines", force: :cascade do |t|
     t.string  "text",     default: ""
     t.string  "key_word", default: ""
+    t.string  "kind"
     t.integer "fable_id"
   end
 

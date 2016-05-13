@@ -13,11 +13,13 @@ fable1 = {
 	lines_attributes: {
 		"0": {
 			text: "Once upon a time there was a",
-			key_word: "smelly"
+			key_word: "smelly",
+			kind: "adjective"
 		},
 		"1": {
 			text: "ogre.  He had a pet",
-			key_word: "fish"
+			key_word: "fish",
+			kind: "noun"
 		},
 		"2": {
 			text: ". The end."
@@ -30,11 +32,13 @@ fable2 = {
 	lines_attributes: {
 		"0": {
 			text: "Once upon a time there was a",
-			key_word: "scary"
+			key_word: "scary",
+			kind: "adjective"
 		},
 		"1": {
 			text: "chef.  He had a pet",
-			key_word: "golden retriever"
+			key_word: "golden retriever",
+			kind: "noun"
 		},
 		"2": {
 			text: ". It died. The end."
