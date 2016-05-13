@@ -25,5 +25,24 @@ fable1 = {
 	}
 }
 
+fable2 = {
+	title: "The mystery meal",
+	lines_attributes: {
+		"0": {
+			text: "Once upon a time there was a",
+			key_word: "scary"
+		},
+		"1": {
+			text: "chef.  He had a pet",
+			key_word: "golden retriever"
+		},
+		"2": {
+			text: ". It died. The end."
+		}
+	}
+}
+
+
 #User.create!(username: "Admin", email: "foo@bar.com", password: "111111", password_confirmation: "111111")
 Fable.create!(fable1)
+Fable.create!(fable2)

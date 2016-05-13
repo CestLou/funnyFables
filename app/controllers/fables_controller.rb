@@ -15,6 +15,7 @@ class FablesController < ApplicationController
   # GET /fables/new
   def new
     @fable = Fable.new
+    5.times {@fable.lines.build}
   end
 
   # GET /fables/1/edit
@@ -69,6 +70,12 @@ class FablesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fable_params
-      params.fetch(:fable, {})
+      params.require(:fable).permit(
+        :title,
+        lines_attributes: [
+          :text,
+          :key_word
+          ]
+        )
     end
 end

@@ -10,7 +10,24 @@
       </ul>
     </div>
   <% end %>
-
+  
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br><br>
+    <p>Write each line of your fable below</p>
+    <%= f.fields_for :lines do |line| %>
+      <li>
+        <%= line.text_field :text %>
+        <%= line.select(:key_word, Line.key_words) %>
+      </li>
+     
+    <% end %>
+    
+  </div>
+  
+ 
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
