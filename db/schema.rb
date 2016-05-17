@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513163103) do
+ActiveRecord::Schema.define(version: 20160517210518) do
 
   create_table "fable_ratings", force: :cascade do |t|
     t.integer  "fable_id"
@@ -29,10 +29,18 @@ ActiveRecord::Schema.define(version: 20160513163103) do
   end
 
   create_table "lines", force: :cascade do |t|
-    t.string  "text",     default: ""
-    t.string  "key_word", default: ""
+    t.string  "text",       default: ""
+    t.string  "user_input", default: ""
     t.string  "kind"
     t.integer "fable_id"
+  end
+
+  create_table "user_fables", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "fable_id"
+    t.text     "answers",    default: "--- []\n"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "users", force: :cascade do |t|

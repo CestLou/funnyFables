@@ -15,11 +15,12 @@ class FablesController < ApplicationController
   # GET /fables/new
   def new
     @fable = Fable.new
-    5.times {@fable.lines.build}
+    build_default_lines(@fable)
   end
 
   # GET /fables/1/edit
   def edit
+    build_default_lines(@fable)
   end
 
   # POST /fables
@@ -74,8 +75,12 @@ class FablesController < ApplicationController
         :title,
         lines_attributes: [
           :text,
-          :key_word
+          :user_input
           ]
         )
+    end
+    
+    def build_default_lines(fable)
+      (5-fable.lines.count).times {fable.lines.build}
     end
 end

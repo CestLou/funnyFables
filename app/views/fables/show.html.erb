@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<%= @fable.print_story %>
+<% @fable.lines.each do |line| %>
+		<%= print_line(line) %>
+<% end %>
 
 <%= link_to 'Edit', edit_fable_path(@fable) %> |
 <%= link_to 'Back', fables_path %>

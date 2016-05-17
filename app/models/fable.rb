@@ -1,7 +1,8 @@
 class Fable < ActiveRecord::Base
 	
 	belongs_to :author, class_name: "User"
-	has_many :users
+	has_many :user_fables
+	has_many :users, through: :user_fables
 	has_many :lines
 	accepts_nested_attributes_for :lines, reject_if: proc { |attr| attr['text'].blank?}
 	
@@ -14,12 +15,13 @@ class Fable < ActiveRecord::Base
 	
 	def print_story
 		story = ""
-		lines.each do |line| 
+		lines.each_with_index do |line, i| 
 			story += " " unless (line["text"] =~ /^[[:punct:]]/)
-			story += "#{line["text"]} #{line["key_word"]}"
+			story += "#{line["text"]} #{line['kind'].to_s.upcase}\n"
 		end
 		story.strip
 	end
+
 	
 	def get_author
 	end

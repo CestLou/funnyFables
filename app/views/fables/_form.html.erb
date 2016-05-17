@@ -19,7 +19,7 @@
     <%= f.fields_for :lines do |line| %>
       <li>
         <%= line.text_field :text, :size => 55 %>
-        <%= line.select(:key_word, Line.key_words) %>
+        <%= line.select(:user_input, Line.key_words) %>
         <br><br>
       </li>
      

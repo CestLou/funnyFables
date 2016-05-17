@@ -53,3 +53,21 @@ Lets get setup with devise for login, and have basic static pages,
 				-> has a call to action to sign up or log in
 				-> has a navigation bar that has your user acct, home, logout if logged in 
 					 and sign up, sign in if not logged in
+					 
+					 
+### How do we see that fables that users have completed with their answers?
+
+Maybe have a user_fables join table, this would show which fables users have completed
+and let others see how they answered.
+
+So you can either have a fable that you have authored (that other people will fill in)
+OR
+you can have fables that you have completed (that were written by other people)
+
+lets clarify in the model.
+
+
+
+### How do we store user input?
+
+In our user_fable table, maybe we can add answers that the user has submitted for each fable.
