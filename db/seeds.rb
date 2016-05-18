@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-author = User.create!(username: "Admin", email: "foo@bar.com", password: "111111", password_confirmation: "111111")
-completer = User.create!(username: "Completer", email: "foo2@bar.com", password: "111111", password_confirmation: "111111")
-completer2 = User.create!(username: "Completer2", email: "foo22@bar.com", password: "111111", password_confirmation: "111111")
+author = User.create!(username: "Admin", email: "foo@bar.com", password: "11111111", password_confirmation: "11111111")
+completer = User.create!(username: "Completer", email: "foo2@bar.com", password: "11111111", password_confirmation: "11111111")
+completer2 = User.create!(username: "Completer2", email: "foo22@bar.com", password: "11111111", password_confirmation: "11111111")
 
 
 
@@ -28,7 +28,7 @@ fable1 = {
 		},
 		"2": {
 			text: ". The end."
-		}
+		},
 	}
 }
 

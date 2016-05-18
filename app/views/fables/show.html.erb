@@ -1,8 +1,15 @@
-<p id="notice"><%= notice %></p>
+<%= link_to "Written by - #{@fable.author.print}", user_path(@fable.author) %>
 
+<br>
 <% @fable.lines.each do |line| %>
 		<%= print_line(line) %>
 <% end %>
 
-<%= link_to 'Edit', edit_fable_path(@fable) %> |
-<%= link_to 'Back', fables_path %>
+
+<%= button_to "Complete Fable!", root_path %>
+
+<br><br>
+<div class="footer">
+	<%= link_to 'Edit', edit_fable_path(@fable) %> |
+	<%= link_to 'Back', fables_path %>
+</div>

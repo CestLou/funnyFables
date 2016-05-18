@@ -1,0 +1,8 @@
+<h1><%= "@#{@user.username}" %></h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<h2>Fables authored:</h2>
+<%= render "/fables/fables", {fables: @user.authored_fables} %>
+
+<h2>Fables completed</h2>
+<%= render "/fables/fables", {fables: @user.completed_fables} %>

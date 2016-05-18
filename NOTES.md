@@ -1,5 +1,7 @@
 # Funny Fables!
 
+rake db:drop db:create db:migrate
+
 ## Funny Fables is an online Madlibs story creator!
 
 

@@ -18,5 +18,9 @@ class User < ActiveRecord::Base
 		f.save
 	end
 	
+	def print
+		"@#{self.username}"
+	end
+	
 	
 end
