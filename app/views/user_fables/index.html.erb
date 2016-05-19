@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing User Fables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_fables.each do |user_fable| %>
+      <tr>
+        <td><%= link_to user_fable.fable.title, user_fable %></td>
+        <td><%= link_to 'Edit', edit_user_fable_path(user_fable) %></td>
+        <td><%= link_to 'Destroy', user_fable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User fable', new_user_fable_path %>

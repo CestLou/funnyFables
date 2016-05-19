@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user_fable.fable.title %></h1>
+<%= @user_fable.print_story %>
+<br><br>
+
+<%= link_to 'Edit', edit_user_fable_path(@user_fable) %> |
+<%= link_to 'Back', user_fables_path %>

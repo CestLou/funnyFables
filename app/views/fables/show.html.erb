@@ -6,7 +6,7 @@
 <% end %>
 
 
-<%= button_to "Complete Fable!", root_path %>
+<%= button_to "Complete Fable!", new_user_fable_path(id: @fable.id), method: :post %>
 
 <br><br>
 <div class="footer">

@@ -21,7 +21,10 @@ class Fable < ActiveRecord::Base
 		end
 		story.strip
 	end
-
+	
+	def fillable_lines
+		lines.select{|l| !!l['kind']}
+	end
 	
 	def get_author
 	end

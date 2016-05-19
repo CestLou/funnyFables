@@ -1,0 +1,30 @@
+<%= form_for(@user_fable) do |f| %>
+  <% if @user_fable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_fable.errors.count, "error") %> prohibited this user_fable from being saved:</h2>
+
+      <ul>
+      <% @user_fable.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="fields">
+    <%= f.hidden_field :fable_id, value: @fable.id %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <% @user_fable.answers.each_with_index do |a, i|%>
+    <p>
+    <%= @fable.lines[i]['kind'] %> <%= f.text_field :answer, name: "user_fable[answers][]", value: a %>
+    </p>
+  <% end %>
+    
+  </div>
+  
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

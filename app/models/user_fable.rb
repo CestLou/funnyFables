@@ -5,9 +5,14 @@ class UserFable < ActiveRecord::Base
 	
 	serialize :answers, Array
 	
+	
 	# returns of the the original fables
 	def self.get_fables
 		Fable.where(id: UserFable.uniq.pluck(:fable_id))
+	end
+	
+	def create_blank_answers
+		self.answers = Array.new(fable.fillable_lines.length, "")
 	end
 	
 	def print_story

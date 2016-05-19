@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   
+ 
   root to: 'static_pages#home'
   
   devise_for :users
   resources :users, only: [:index, :show]
   resources :fables
-  
-
-  
+  resources :user_fables, except: [:new]
+  #post 'user_fables/:id/take' => 'user_fables#take', as: 'take_user_fable'
+  post 'user_fables/new' => 'user_fables#new', as: 'new_user_fable'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
