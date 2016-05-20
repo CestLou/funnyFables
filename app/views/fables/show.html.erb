@@ -1,15 +1,20 @@
+<h1><%= @fable.title %></h1>
 <%= link_to "Written by - #{@fable.author.print}", user_path(@fable.author) %>
-
-<br>
-<% @fable.lines.each do |line| %>
-		<%= print_line(line) %>
+<% if current_user == @fable.author %>
+	| <%= link_to 'Edit', edit_fable_path(@fable) %>
 <% end %>
+<br><br>
+<%= create_fable_btn(@fable) %>
+<br><br>
 
-
-<%= button_to "Complete Fable!", new_user_fable_path(id: @fable.id), method: :post %>
+<h2>User Results:</h2>
+<% if @fable.user_fables.length > 0 %>
+	<%= render partial: 'user_fables/user_fables', locals: {user_fables: @fable.user_fables} %>
+<% else %>
+	<p>There are no completed versions of this fable yet. Complete your own to get started</p>
+<% end %>
 
 <br><br>
 <div class="footer">
-	<%= link_to 'Edit', edit_fable_path(@fable) %> |
 	<%= link_to 'Back', fables_path %>
 </div>

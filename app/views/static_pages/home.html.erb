@@ -1,23 +1,5 @@
 <h1>StaticPages#home</h1>
 <p>Find me in app/views/static_pages/home.html.erb</p>
 
-
-<table>
-  <thead>
-    <tr>
-      <td>Title</td>
-    	<td>Author</td>
-    	<td>Rating</td>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @fables.each do |fable| %>
-      <tr>
-        <td><%= link_to fable.title, fable %></td>
-        <td><%= fable.get_author %></td>
-        <td><%= fable.get_rating %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<h3>Funniest Fables!</h3>
+<%= render partial: 'fables/fables', locals: {fables: @fables }%>

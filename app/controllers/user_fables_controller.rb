@@ -1,6 +1,6 @@
 class UserFablesController < ApplicationController
   before_action :set_user_fable, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, execpt: [:index, :show]
+  before_filter :authenticate_user!, except: [:index, :show]
   
   # GET /user_fables
   # GET /user_fables.json
@@ -17,7 +17,7 @@ class UserFablesController < ApplicationController
   def new
     params.inspect
     @fable = Fable.find(params[:id])
-    @user_fable = UserFable.find_or_create_by(fable_id: params[:id] )
+    @user_fable = UserFable.new(fable_id: params[:id] )
     @user_fable.create_blank_answers
   end
   
@@ -29,7 +29,7 @@ class UserFablesController < ApplicationController
   # POST /user_fables
   # POST /user_fables.json
   def create
-    binding.pry
+
     @user_fable = UserFable.new(user_fable_params)
 
     respond_to do |format|

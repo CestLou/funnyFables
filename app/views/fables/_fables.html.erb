@@ -1,16 +1,26 @@
-<table>
-  <thead>
+<table class="table table-hover ">
+  <thead class="thead-inverse">
     <tr>
-      <th colspan="3"></th>
+      <td>Title</td>
+      <td>Author</td>
+      <td>Rating</td>
+      <td></td>
+      <td></td>
     </tr>
   </thead>
 
   <tbody>
     <% fables.each do |fable| %>
       <tr>
-        <td><%= link_to fable.title, fable %></td>
-        <td><%= link_to 'Edit', edit_fable_path(fable) %></td>
-        <td><%= link_to 'Destroy', fable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= fable.title %></td>
+        <td><%= link_to fable.author.print, user_path(fable.author) %></td>
+        <td><%= fable.get_rating %></td>
+        <td>
+          <%= create_fable_btn(fable) %>
+        </td>
+        <td>
+          <%= read_fables_btn(fable) %>
+        </td>
       </tr>
     <% end %>
   </tbody>

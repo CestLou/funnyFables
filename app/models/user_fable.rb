@@ -24,4 +24,16 @@ class UserFable < ActiveRecord::Base
 		story.strip
 	end
 	
+	def fable_title
+		fable.title
+	end
+	
+	def author_name
+		fable.author.print
+	end
+	
+	def user_name
+		user.print
+	end
+	
 end

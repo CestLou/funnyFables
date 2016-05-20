@@ -1,16 +1,26 @@
-<table>
-  <thead>
+<table class="table table-hover ">
+  <thead class="thead-inverse">
     <tr>
-      <th colspan="3"></th>
+      <td>Title</td>
+      <td>Taken By:</td>
+      <td>Written By:</td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
   </thead>
 
   <tbody>
-    <% user_fables.each do |uf| %>
+    <% user_fables.each do |user_fable| %>
       <tr>
-        <td><%= link_to uf.fable.title, uf %></td>
-        <td><%= link_to 'Edit', edit_user_fable_path(uf) %></td>
-        <td><%= link_to 'Destroy', uf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to user_fable.fable_title, user_fable_path(user_fable), method: :get %></td>
+        
+        <td><%= link_to user_fable.user_name, user_path(user_fable.user) %></td>
+        
+        <td><%= link_to user_fable.author_name, user_path(user_fable.fable.author) %></td>
+        
+        <td><%= edit_btn(user_fable) %></td>
+        <td><%= delete_btn(user_fable) %></td>
       </tr>
     <% end %>
   </tbody>

@@ -4,5 +4,7 @@
 <%= @user_fable.print_story %>
 <br><br>
 
-<%= link_to 'Edit', edit_user_fable_path(@user_fable) %> |
-<%= link_to 'Back', user_fables_path %>
+<% if is_user_fable_completer?(@user_fable) %>
+	<%= link_to 'Edit', edit_user_fable_path(@user_fable) %> |
+<% end %>
+<%= back_btn %>
